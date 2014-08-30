@@ -39,7 +39,11 @@ function load_data() {
 
             html = '<tr><th>#</th><th>Thành viên</th>';
             for(i = 0; i < rounds[round].length; ++i) {
-                html += '<th><a href="http://vn.spoj.com/VM14/problems/' + rounds[round][i] + '">' + rounds[round][i] + '</a></th>'
+                if (round === 'total') {
+                    html += '<th>' + rounds[round][i] + '</th>'
+                } else {
+                    html += '<th><a href="http://vn.spoj.com/VM14/problems/' + rounds[round][i] + '">' + rounds[round][i] + '</a></th>'
+                }
             }
             html += '<th>Tổng điểm</th></tr>'
 
@@ -53,7 +57,7 @@ function load_data() {
 
                 for(i = 0; i < rounds[round].length; ++i) {
                     var tmp = cur_users[j][1][rounds[round][i]];
-                    html += '<td>' + ((tmp) ? tmp : '-') + '</td>';
+                    html += '<td>' + ((tmp) ? parseFloat(tmp).toFixed(2) : '-') + '</td>';
                 }
                 html += '<td>' + parseFloat(cur_users[j][1]['total']).toFixed(2) + '</td></tr>';
             }

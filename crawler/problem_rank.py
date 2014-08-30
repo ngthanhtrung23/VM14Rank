@@ -64,8 +64,14 @@ def crawl_problem(code):
 
 
 
+problem_count = 0
 with open(PROBLEM_LIST_PATH, 'r') as f:
     for l in f.readlines():
         problem_code = l.strip()
+        problem_count += 1
+
+        if problem_count <= 4 * 4:
+            continue
+        
         print 'Problem: ', problem_code
         crawl_problem(problem_code)

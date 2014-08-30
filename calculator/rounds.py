@@ -29,15 +29,28 @@ with open(PROBLEM_LIST_PATH, 'r') as f:
             for line in f.readlines():
                 user, score = line.strip().split(' ')
                 score = float(score)
+
                 if user not in users[round_code]:
                     users[round_code][user] = {}
                 users[round_code][user][problem_code] = score
                 users[round_code][user]['total'] = users[round_code][user].get('total', 0) + score
         problem_count += 1
 
+users['total'] = {}
+rounds['total'] = []
 for round_id in xrange(1, 6):
     round_code = 'round' + str(round_id)
+    for user in users[round_code]:
+        if user not in users['total']:
+            users['total'][user] = {}
+            users['total'][user]['total'] = 0
+        users['total'][user][round_code] = users[round_code][user]['total']
+        users['total'][user]['total'] += users[round_code][user]['total']
+
     users[round_code] = users[round_code].items()
+    rounds['total'].append(round_code)
+
+users['total'] = users['total'].items()
 
 with open(JSON_DATA_PATH, 'w') as f:
     f.write('users = ')
