@@ -30,12 +30,9 @@ var cmp_total = function (x, y) {
 }
 
 function load_data() {
-    console.log(rounds);
     var round, i, html, cur_users, j;
     for(round in rounds)
         if (rounds.hasOwnProperty(round)) {
-            console.log(round);
-            console.log(rounds[round]);
 
             html = '<tr><th>#</th><th>Thành viên</th>';
             for(i = 0; i < rounds[round].length; ++i) {

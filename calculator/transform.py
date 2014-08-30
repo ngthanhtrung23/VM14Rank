@@ -28,7 +28,7 @@ with open(PROBLEM_LIST_PATH, 'r') as f:
                     if abs(score - last_score) < 1e-6:
                         actual_score = last_actual_score
                     else:
-                        actual_score = CHALLENGE_SCORE[order - 1]
+                        actual_score = max(CHALLENGE_SCORE[order - 1], 0)
 
                     last_score = score
                     last_actual_score = actual_score
