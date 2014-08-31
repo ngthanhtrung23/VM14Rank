@@ -12,6 +12,8 @@ ducphan 100.0
 duyboy135 100.0
 moriarty123 100.0
 net12k44 100.0
+conan_96 100.0
+magician_14312 100.0
 laoriu 100.0
 hgminh95 100.0
 tkcvdd 100.0
@@ -21,6 +23,5 @@ phuchaontu 100.0
 noyethug 100.0
 skyvn97 75.0
 voj 65.0
-magician_14312 65.0
 hoangtheanhhp 40.0
 lehuyduc 30.0
